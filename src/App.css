@@ -1,0 +1,202 @@
+/* ── Topbar ── */
+.topbar{background:#173f35;color:#e6ecdf;font-size:11px;letter-spacing:.2px;height:38px;display:flex;align-items:center;justify-content:center;gap:10px;overflow:hidden}
+.topbar span{display:flex;align-items:center;gap:8px}
+.live-dot{width:6px;height:6px;background:#c7db9e;border-radius:50%;flex-shrink:0}
+.nigeria-flag{display:inline-block;width:18px;height:12px;background:linear-gradient(90deg,#16845c 33%,#fff 33%,#fff 66%,#16845c 66%);border-radius:2px}
+
+/* ── Logo ── */
+.brand{display:flex;align-items:center;gap:10px}
+.brand svg{width:32px;height:32px}
+.brand span{font-family:Manrope,sans-serif;font-weight:700;font-size:15px;letter-spacing:-.5px}
+
+/* ── Hero ── */
+.hero-section{position:relative;background:#173f35;color:#f3f6e9;overflow:hidden;padding:0 0 80px}
+.hero-bg-shapes{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.bg-circle{position:absolute;border-radius:50%;border:1px solid #ffffff08}
+.bg-circle-1{width:700px;height:700px;top:-200px;right:-100px}
+.bg-circle-2{width:500px;height:500px;bottom:-150px;left:-120px}
+.bg-circle-3{width:300px;height:300px;top:50%;left:55%;transform:translate(-50%,-50%)}
+.bg-grain{position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='a'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23a)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
+.hero-nav{display:flex;align-items:center;justify-content:space-between;padding:22px 0}
+.hero-inner{max-width:1200px;margin:0 auto;padding:0 56px;position:relative;z-index:1}
+.hero-content{display:grid;grid-template-columns:1.15fr 1fr;gap:70px;align-items:center;padding:50px 0 0}
+.hero-text{position:relative}
+.hero-eyebrow{display:flex;align-items:center;gap:10px;font-size:10px;letter-spacing:2.2px;color:#b3c99b;margin-bottom:25px}
+.hero-eyebrow::before{content:'';width:22px;height:2px;background:#e3955f}
+.hero-text h1{font-family:Manrope,sans-serif;font-size:clamp(46px,5.5vw,72px);line-height:1.08;letter-spacing:-3px;font-weight:700;margin:0}
+.hero-text h1 em{font-style:normal;color:#c5d9a5}
+.hero-subtitle{font-size:15px;line-height:1.9;color:#b3c5a2;margin-top:24px;max-width:420px}
+.hero-badges{display:flex;gap:14px;margin-top:30px}
+.hero-badge{display:flex;align-items:center;gap:8px;background:#ffffff0d;border:1px solid #ffffff12;padding:10px 16px;border-radius:6px;font-size:11px;color:#d0debb}
+.hero-badge svg{width:16px;height:16px;stroke:#c5d9a5;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.hero-visual{position:relative;display:flex;align-items:center;justify-content:center;min-height:400px}
+.orbit-ring{position:absolute;border-radius:50%;border:1px dashed #ffffff12}
+.orbit-ring-1{width:360px;height:360px}
+.orbit-ring-2{width:240px;height:240px;border-color:#ffffff18}
+.orbit-ring-3{width:130px;height:130px;border-color:#ffffff22}
+.orbit-center{width:80px;height:80px;border-radius:20px;background:#365c3e;border:1px solid #5b7e47;display:grid;place-items:center;box-shadow:0 0 0 10px #2c533b;position:relative;z-index:2}
+.orbit-center svg{width:40px;height:40px}
+.floating-card{position:absolute;background:#f5f6ebf5;padding:18px 20px;border-radius:8px;color:#395631;box-shadow:0 20px 40px #0b251e35;z-index:3;min-width:170px}
+.floating-card-number{font-size:9px;color:#a0b18c;position:absolute;right:15px;top:15px}
+.floating-card svg{width:18px;height:18px;stroke:#819b64;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.floating-card strong{display:block;font-size:13px;font-weight:600;margin-top:10px}
+.floating-card small{display:block;font-size:9px;line-height:1.7;color:#8b9c78;margin-top:5px}
+.card-1{left:-5%;top:8%;transform:rotate(-7deg)}
+.card-2{right:-5%;top:35%;background:#e8bd8ef5!important;transform:rotate(6deg)}
+.card-2 small{color:#886c48}.card-2 .floating-card-number{color:#a18459}
+.card-3{left:5%;bottom:5%;transform:rotate(-3deg)}
+.spark{position:absolute;font-size:50px;color:#e6a373;right:15%;top:8%;font-style:normal;z-index:1}
+
+/* ── Waitlist section ── */
+.waitlist-section{max-width:1200px;margin:-40px auto 0;padding:0 56px;position:relative;z-index:2}
+.waitlist-card{background:#fff;border-radius:14px;box-shadow:0 30px 80px #1d3f2d12,0 0 0 1px #e5eadd;overflow:hidden}
+.waitlist-header{background:#f8f9f4;padding:45px 50px 40px;border-bottom:1px solid #e6ebdf;position:relative;overflow:hidden}
+.waitlist-header-bg{position:absolute;right:-30px;top:-30px;width:200px;height:200px;border-radius:50%;border:1px solid #e0e8d4;opacity:.5}
+.waitlist-header .hero-eyebrow{color:#8a9e76;font-size:9px;letter-spacing:1.8px;margin-bottom:16px}
+.waitlist-header h2{font-family:Manrope,sans-serif;font-size:38px;font-weight:700;letter-spacing:-1.6px;line-height:1.2;margin:0}
+.waitlist-header h2 em{font-style:normal;color:#778e6b}
+.waitlist-header p{font-size:14px;color:#7b8e6b;line-height:1.9;margin-top:14px;max-width:500px}
+
+.waitlist-body{display:grid;grid-template-columns:1.1fr 1fr;gap:0}
+.form-area{padding:45px 50px}
+.interest-area{padding:45px 50px;background:#f8f9f4;border-left:1px solid #e6ebdf}
+
+/* ── Form fields ── */
+.form-group{margin-bottom:22px}
+.form-group label{display:block;font-size:12px;font-weight:600;color:#3d5a2e;margin-bottom:9px}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:14px 16px;border:1px solid #dfe6d5;border-radius:7px;background:#fcfcf9;color:#405e33;font-size:14px;transition:border-color .2s,box-shadow .2s;outline:none}
+.form-group input::placeholder,.form-group textarea::placeholder{color:#a2ab96}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:#7a9c5e;box-shadow:0 0 0 3px #7a9c5e18}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+
+/* ── Interest selectors ── */
+.interest-section{margin-bottom:30px}
+.interest-section>h3{font-size:14px;font-weight:650;letter-spacing:-.3px;margin:0 0 6px}
+.interest-section>p{font-size:11px;color:#8a9b76;line-height:1.7;margin:0 0 16px}
+.interest-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.interest-chip{display:flex;align-items:center;gap:9px;padding:13px 14px;border:1px solid #e0e8d4;border-radius:7px;font-size:12px;background:#fff;transition:all .2s;cursor:pointer;text-align:left;position:relative;overflow:hidden}
+.interest-chip:hover{border-color:#b5c89e;background:#f5f8ef}
+.interest-chip.selected{border-color:#7a9c5e;background:#edf3e4;color:#3d5a2e;font-weight:550}
+.interest-chip.selected::after{content:'';position:absolute;right:10px;top:50%;transform:translateY(-50%);width:16px;height:16px;background:#7a9c5e;border-radius:50%;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.5 8.5L7 11L11.5 5.5' stroke='white' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
+.chip-icon{width:28px;height:28px;border-radius:6px;background:#eef3e6;display:grid;place-items:center;flex-shrink:0}
+.chip-icon svg{width:15px;height:15px;stroke:#6d8854;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+/* ── Submit button ── */
+.submit-btn{width:100%;padding:16px;background:#173f35;color:#e8f0d8;font-size:14px;font-weight:600;border-radius:8px;display:flex;align-items:center;justify-content:center;gap:10px;cursor:pointer;transition:background .2s,transform .1s;margin-top:8px;letter-spacing:-.2px}
+.submit-btn:hover{background:#1d4d3f}
+.submit-btn:active{transform:scale(.98)}
+.submit-btn svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.form-note{display:flex;align-items:center;gap:8px;font-size:10px;color:#8a9b76;margin-top:14px;line-height:1.7}
+.form-note svg{width:14px;height:14px;stroke:#8a9b76;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+
+/* ── Stats strip ── */
+.stats-strip{max-width:1200px;margin:50px auto 0;padding:0 56px}
+.stats-inner{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.stat-card{padding:28px;border:1px solid #e2e8d8;border-radius:10px;background:#fff;text-align:center;position:relative;overflow:hidden}
+.stat-number{font-family:Manrope,sans-serif;font-size:42px;font-weight:600;letter-spacing:-2px;color:#2d5234;line-height:1}
+.stat-label{font-size:11px;color:#8a9b76;margin-top:10px;line-height:1.6}
+.stat-icon{position:absolute;right:14px;top:14px}
+.stat-icon svg{width:18px;height:18px;stroke:#c5d4b4;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+
+/* ── Benefits grid ── */
+.benefits-section{max-width:1200px;margin:65px auto 0;padding:0 56px}
+.benefits-header{text-align:center;margin-bottom:45px}
+.benefits-header .hero-eyebrow{justify-content:center;color:#8a9e76;font-size:9px}
+.benefits-header h2{font-family:Manrope,sans-serif;font-size:36px;font-weight:700;letter-spacing:-1.5px;margin:16px 0 0}
+.benefits-header h2 em{font-style:normal;color:#778e6b}
+.benefits-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.benefit-card{padding:30px;border:1px solid #e2e8d8;border-radius:10px;background:#fff;position:relative;overflow:hidden;transition:transform .3s,box-shadow .3s}
+.benefit-card:hover{transform:translateY(-4px);box-shadow:0 15px 40px #1d3f2d0d}
+.benefit-icon{width:48px;height:48px;border-radius:12px;background:#edf3e4;display:grid;place-items:center;margin-bottom:20px}
+.benefit-icon svg{width:22px;height:22px;stroke:#5c7d42;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.benefit-card h3{font-size:18px;font-weight:650;letter-spacing:-.5px;margin:0 0 10px}
+.benefit-card p{font-size:12px;color:#7d8e6e;line-height:1.9}
+.benefit-stamp{position:absolute;right:-8px;top:-8px;font-size:60px;color:#f0f4e9;line-height:1}
+
+/* ── Footer ── */
+.footer{background:#173f35;color:#b3c5a2;padding:50px 56px;margin-top:80px}
+.footer-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:30px}
+.footer .brand span{color:#e8f0d8}
+.footer p{font-size:12px;line-height:1.8}
+.footer-right{text-align:right}
+.footer-right span{display:block;font-size:10px;color:#8aab7a;margin-top:6px}
+
+/* ── Success state ── */
+.success-overlay{position:fixed;inset:0;background:#173f35f5;z-index:100;display:grid;place-items:center;padding:30px}
+.success-card{background:#fff;border-radius:14px;padding:55px 50px;text-align:center;max-width:520px;width:100%;position:relative;overflow:hidden}
+.success-orbit{width:90px;height:90px;border-radius:50%;background:#edf3e2;border:1px solid #dce7ce;display:grid;place-items:center;margin:0 auto 30px;box-shadow:0 0 0 12px #f2f6ec;position:relative}
+.success-orbit svg{width:36px;height:36px;stroke:#54783f;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.success-orbit::after{content:'✳';position:absolute;right:-18px;top:-10px;font-size:32px;color:#e6a375}
+.success-card h2{font-family:Manrope,sans-serif;font-size:32px;font-weight:700;letter-spacing:-1.2px;margin:0 0 14px}
+.success-card h2 em{font-style:normal;color:#778e6b}
+.success-card>p{font-size:13px;color:#7d8e6e;line-height:1.9;max-width:380px;margin:0 auto}
+.success-number{margin:28px 0;padding:20px;background:#f5f8ef;border:1px solid #e3ebd6;border-radius:8px}
+.success-number small{font-size:8px;letter-spacing:1.5px;color:#8a9b76;display:block;margin-bottom:8px}
+.success-number strong{font-size:20px;font-weight:650;letter-spacing:-.4px;color:#2d5234}
+.success-btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;background:#173f35;color:#e8f0d8;font-size:13px;font-weight:600;border-radius:7px;cursor:pointer;transition:background .2s}
+.success-btn:hover{background:#1d4d3f}
+.success-note{font-size:10px;color:#8a9b76;margin-top:18px;line-height:1.7;display:flex;align-items:center;justify-content:center;gap:6px}
+
+/* ── Responsive ── */
+@media(max-width:1050px){
+  .hero-inner,.waitlist-section,.stats-strip,.benefits-section{padding-inline:35px}
+  .hero-content{gap:40px}
+  .hero-text h1{font-size:52px}
+  .floating-card{min-width:150px;padding:15px 17px}
+  .orbit-ring-1{width:300px;height:300px}
+  .orbit-ring-2{width:200px;height:200px}
+  .waitlist-header{padding:35px 35px 30px}
+  .waitlist-header h2{font-size:32px}
+  .form-area,.interest-area{padding:35px}
+  .stats-inner{grid-template-columns:repeat(2,1fr)}
+  .benefits-grid{grid-template-columns:repeat(2,1fr)}
+  .footer{padding-inline:35px}
+}
+@media(max-width:768px){
+  .hero-inner,.waitlist-section,.stats-strip,.benefits-section{padding-inline:20px}
+  .hero-content{grid-template-columns:1fr;gap:20px;padding-top:35px}
+  .hero-text h1{font-size:46px;letter-spacing:-2px}
+  .hero-subtitle{font-size:14px}
+  .hero-badges{flex-wrap:wrap}
+  .hero-visual{min-height:300px;margin-bottom:-40px}
+  .orbit-ring-1{width:260px;height:260px}
+  .orbit-ring-2{width:170px;height:170px}
+  .orbit-ring-3{width:100px;height:100px}
+  .orbit-center{width:60px;height:60px;border-radius:15px}
+  .orbit-center svg{width:30px;height:30px}
+  .floating-card{min-width:140px;padding:14px 15px}
+  .floating-card strong{font-size:11px}
+  .card-1{left:0;top:5%}
+  .card-2{right:0;top:35%}
+  .card-3{left:2%;bottom:2%}
+  .spark{font-size:35px;right:8%;top:3%}
+  .waitlist-section{margin-top:-30px}
+  .waitlist-header{padding:30px 22px 25px}
+  .waitlist-header h2{font-size:28px}
+  .waitlist-header p{font-size:13px}
+  .waitlist-body{grid-template-columns:1fr}
+  .form-area{padding:28px 22px}
+  .interest-area{padding:28px 22px;border-left:0;border-top:1px solid #e6ebdf}
+  .form-row{grid-template-columns:1fr}
+  .interest-grid{grid-template-columns:1fr}
+  .stats-inner{grid-template-columns:1fr 1fr;gap:12px}
+  .stat-card{padding:22px}
+  .stat-number{font-size:34px}
+  .benefits-header h2{font-size:30px}
+  .benefits-grid{grid-template-columns:1fr}
+  .benefit-card{padding:25px}
+  .footer{padding:35px 20px;margin-top:50px}
+  .footer-inner{flex-direction:column;text-align:center;gap:18px}
+  .footer-right{text-align:center}
+  .success-card{padding:40px 25px}
+  .success-card h2{font-size:27px}
+}
+@media(max-width:400px){
+  .hero-text h1{font-size:38px}
+  .hero-badges{gap:8px}
+  .hero-badge{padding:9px 12px;font-size:10px}
+  .topbar{font-size:9px}
+  .waitlist-header h2{font-size:25px}
+  .stat-number{font-size:28px}
+  .stat-card{padding:18px}
+}
