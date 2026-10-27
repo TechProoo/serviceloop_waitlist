@@ -1,5 +1,7 @@
 [build]
-  base = "Frontend"
+  # The serviceloop_waitlist repository's root is the waitlist app.
+  # The marketplace frontend has its own repository and Netlify configuration.
+  base = "."
   command = "npm run build"
   publish = "dist"
 
