@@ -14,6 +14,10 @@ export function Icon({
       </>
     ),
     arrow: <path d="M4 12h15m-5-5 5 5-5 5" />,
+    lock: <><rect x="5" y="10" width="14" height="11" rx="2" /><path d="M8 10V6a4 4 0 0 1 8 0v4M12 14v3" /></>,
+    camera: <><path d="M8 6l2-3h4l2 3h5v15H3V6Z" /><circle cx="12" cy="13" r="4" /></>,
+    return: <><path d="M9 5 3 11l6 6M3 11h11a6 6 0 0 1 0 12" transform="translate(0 -2)" /><path d="M13 3h8v6" /></>,
+    refresh: <><path d="M20 7v5h-5M4 17v-5h5" /><path d="M5.3 7a8 8 0 0 1 13.2-2L20 7M4 17l1.5 2A8 8 0 0 0 18.7 17" /></>,
     diagonal: <path d="M6 18 18 6M6 6h12v12" />,
     pin: (
       <>
@@ -75,6 +79,8 @@ export function Icon({
     close: <path d="m6 6 12 12M6 18 18 6" />,
     menu: <path d="M4 6h16M4 12h16M4 18h16" />,
     plus: <path d="M12 4v16M4 12h16" />,
+    copy: <><rect x="8" y="8" width="12" height="13" rx="2" /><path d="M15 8V3H3v13h5" /></>,
+    print: <><path d="M6 9V3h12v6M6 17H3V9h18v8h-3M6 14h12v7H6Z" /><path d="M17 11h1" /></>,
     file: <path d="M14 2H5v20h14V7l-5-5Zm0 0v6h5M8 12h8m-8 4h5" />,
     bolt: <path d="m13 2-9 12h7l-1 8 10-13h-8Z" />,
     help: (

@@ -1,0 +1,4 @@
+.date-availability{display:flex;align-items:flex-start;gap:11px;padding:16px;margin:18px 0;border:1px solid #dfe5da;background:#f5f7f0;border-radius:12px;color:#315343;text-align:left}
+.date-availability>.icon{width:19px;height:19px;margin-top:2px}.date-availability strong{font-size:12px;font-weight:650;line-height:1.6}.date-availability p{font-size:11px;line-height:1.8;margin-top:5px;color:#64766a}.date-availability .text-link{font-size:12px;margin-top:12px;gap:8px}.date-availability .text-link .icon{width:15px;height:15px}
+.date-availability-unavailable,.date-availability-error{background:#fff8ee;border-color:#e9d6b6;color:#855c28}.date-availability-unavailable p,.date-availability-error p{color:#80684d}.date-availability-checking,.date-availability-invalid{background:#f7f7f4;color:#65776e}
+@media(max-width:540px){.date-availability{padding:14px}.date-availability strong{font-size:13px}.date-availability p{font-size:12px}}

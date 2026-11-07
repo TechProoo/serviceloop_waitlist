@@ -1,3 +1,4 @@
+import { CatalogState } from '../components/ApiState';
 import { useRef, useState } from 'react';
 import type { FormEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -5,12 +6,12 @@ import { Icon, Logo, MachineIcon } from '../components/Icons';
 import { EquipmentCard } from '../components/EquipmentCard';
 import { categories, money, today } from '../data';
 import type { Equipment } from '../data';
-import { useMarketplace } from '../state/Marketplace';
-import { servicePath } from '../components/PageElements';
+import { useMarketplace } from '../state/marketplaceContext';
+import { servicePath } from '../data/services';
 
 export default function HomePage() {
  const navigate = useNavigate();
- const { catalog, saved, toggleSave } = useMarketplace();
+ const { catalog, saved, toggleSave, catalogLoading, catalogError } = useMarketplace();
  const [query, setQuery] = useState('');
  const [search, setSearch] = useState('');
  const [location, setLocation] = useState('All locations');
@@ -327,7 +328,7 @@ export default function HomePage() {
                 </button>
               </div>
             )}
-            {visible.length > 0 ? (
+            {catalogLoading || catalogError ? <CatalogState /> : visible.length > 0 ? (
               <div className="equipment-grid">
                 {visible.map((item) => (
                   <EquipmentCard
@@ -366,7 +367,7 @@ export default function HomePage() {
             <div className="catalog-note">
               <Icon name="help" />
               <span>
-                Explore sample listings. Final availability and costs are
+                Explore equipment listings. Final availability and costs are
                 confirmed with the owner.
               </span>
             </div>
@@ -584,7 +585,7 @@ export default function HomePage() {
               },
               {
                 q: "Can I make a real booking here?",
-                a: "This is an interactive frontend preview. Listings are examples, and requests and equipment you add are saved only in this browser. No payments are collected, and no request is sent to a provider yet.",
+                a: "Listings are submitted by equipment owners and reviewed before publishing. Sign in to save equipment and submit requests. Owners respond with quotes in their workspace. No payments are collected here.",
               },
             ].map((faq) => (
               <details key={faq.q}>

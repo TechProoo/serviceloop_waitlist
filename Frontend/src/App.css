@@ -2846,6 +2846,16 @@
   }
 }
 @media (max-width: 370px) {
+  .site-header .brand > span {
+    font-size: 21px;
+  }
+  .site-header .brand > svg {
+    width: 30px;
+    height: 30px;
+  }
+  .site-header .header-actions {
+    gap: 5px;
+  }
   .container {
     width: calc(100% - 30px);
   }
