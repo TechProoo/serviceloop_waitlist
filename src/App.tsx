@@ -1,3 +1,4 @@
+import { joinWaitlist } from './api';
 import { useEffect, useRef, useState } from "react";
 import type { FormEvent } from "react";
 import gsap from "gsap";
@@ -75,8 +76,9 @@ export default function App() {
   const [wantToRent, setWantToRent] = useState<string[]>([]);
   const [wantToList, setWantToList] = useState<string[]>([]);
   const [submitted, setSubmitted] = useState(false);
-  const [waitlistNumber, setWaitlistNumber] = useState(0);
-  const [count, setCount] = useState(247);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState('');
+
 
   const toggleRent = (item: string) =>
     setWantToRent((prev) => prev.includes(item) ? prev.filter((i) => i !== item) : [...prev, item]);
@@ -172,23 +174,12 @@ export default function App() {
     return () => ctx.revert();
   }, []);
 
-  const handleSubmit = (e: FormEvent) => {
-    e.preventDefault();
-    const num = count + 1;
-    setCount(num);
-    setWaitlistNumber(num);
-    setSubmitted(true);
-
-    gsap.fromTo(
-      ".success-card",
-      { opacity: 0, scale: 0.85, y: 40 },
-      { opacity: 1, scale: 1, y: 0, duration: 0.6, ease: "back.out(1.6)" },
-    );
-    gsap.fromTo(
-      ".success-orbit",
-      { scale: 0 },
-      { scale: 1, duration: 0.5, delay: 0.3, ease: "back.out(2)" },
-    );
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault(); if (submitting) return;
+    setSubmitting(true); setSubmitError('');
+    try { await joinWaitlist({ name: name.trim(), phone: phone.trim(), wantToRent, wantToList }); setSubmitted(true); }
+    catch (error) { setSubmitError(error instanceof Error ? error.message : 'Please try again.'); }
+    finally { setSubmitting(false); }
   };
 
   return (
@@ -242,7 +233,7 @@ export default function App() {
                 </span>
                 <span className="hero-badge">
                   <SvgIcon name="bolt" />
-                  Launch 2025
+                  Early access
                 </span>
               </div>
             </div>
@@ -292,7 +283,7 @@ export default function App() {
               <em>Shape what's next.</em>
             </h2>
             <p>
-              Tell us what you need — or what you have to offer.
+              Enter your name and phone number to join.
               Early members get priority access and a say in what we build.
             </p>
           </div>
@@ -300,25 +291,25 @@ export default function App() {
             <form className="form-area" onSubmit={handleSubmit}>
               <div className="form-group">
                 <label htmlFor="name">Your name</label>
-                <input id="name" value={name} onChange={(e) => setName(e.target.value)} placeholder="Full name" required maxLength={100} />
+                <input id="name" name="name" autoComplete="name" value={name} onChange={(e) => setName(e.target.value)} placeholder="Your name" required maxLength={100} />
               </div>
               <div className="form-group">
                 <label htmlFor="phone">Phone number</label>
-                <input id="phone" type="tel" value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="+234 800 000 0000" required maxLength={20} />
+                <input id="phone" name="phone" type="tel" inputMode="tel" autoComplete="tel" value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="0801 234 5678" required maxLength={20} />
               </div>
-              <button type="submit" className="submit-btn">
-                Join the waitlist
+              {submitError && <p role="alert" style={{color:"#a63224",marginBottom:12}}>{submitError}</p>}<button type="submit" className="submit-btn" disabled={submitting}>
+                {submitting ? 'Joining…' : 'Join the waitlist'}
                 <SvgIcon name="arrow" />
               </button>
               <p className="form-note">
                 <SvgIcon name="shield" />
-                No spam. Unsubscribe anytime. Your info stays with us.
+                Only ServiceLoop launch updates. Your interest helps us build a better marketplace.
               </p>
             </form>
             <div className="interest-area">
               <div className="interest-section">
                 <h3>What would you love to rent?</h3>
-                <p>Select everything that fits your projects.</p>
+                <p>Optional — choose anything you need.</p>
                 <div className="interest-grid">
                   {rentItems.map((item) => (
                     <button
@@ -335,7 +326,7 @@ export default function App() {
               </div>
               <div className="interest-section">
                 <h3>What would you put out for rent?</h3>
-                <p>Own equipment? Tell us what you'd list.</p>
+                <p>Optional — choose equipment you own.</p>
                 <div className="interest-grid">
                   {listItems.map((item) => (
                     <button
@@ -358,7 +349,7 @@ export default function App() {
       <div className="stats-strip" ref={statsRef}>
         <div className="stats-inner">
           {[
-            { num: `${count}+`, label: "Builders already waiting", icon: "users" },
+            { num: "Early access", label: "Be part of the launch", icon: "users" },
             { num: "4", label: "Cities at launch", icon: "globe" },
             { num: "6", label: "Equipment categories", icon: "star" },
             { num: "∞", label: "Possibilities ahead", icon: "bolt" },
@@ -432,12 +423,12 @@ export default function App() {
               <em>Let's build this.</em>
             </h2>
             <p>
-              You're #{waitlistNumber} on the waitlist. We'll reach out with updates,
+              You're on the waitlist. We'll reach out with updates,
               early access and a chance to shape what Service Loop becomes.
             </p>
             <div className="success-number">
-              <small>YOUR WAITLIST NUMBER</small>
-              <strong>SL-{String(waitlistNumber).padStart(4, "0")}</strong>
+              <small>SIGNUP RECEIVED</small>
+              <strong>Your interest has been recorded.</strong>
             </div>
             <button className="success-btn" onClick={() => setSubmitted(false)}>
               Back to the page
@@ -445,7 +436,7 @@ export default function App() {
             </button>
             <p className="success-note">
               <SvgIcon name="shield" />
-              Check your inbox. Big things are coming.
+              Launch updates will follow when they are available.
             </p>
           </div>
         </div>
